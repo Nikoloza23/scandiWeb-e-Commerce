@@ -1,42 +1,49 @@
-import { useParams} from 'react-router';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { delCart } from '../redux/action/index'
 
-function Cart() {
-    const {id} = useParams();
-    const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(false);
 
-    const dispatch = useDispatch();
-     const handleButton = (product) =>{
-         dispatch(handleButton(product));
-     }
-
+const Cart = () =>{
+     
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch()
     
+    const handleClose = (item) => {
+        dispatch(delCart(item))
+    }
+
+
+
+
+    const product = (product) => {
+        return(
+            <div className="px-4 my-5 bg-light rounded-3" key={product.id}>
+                <div className="container">
+                    <button onClick={()=>handleClose(product)}  className="btn-close float-end" aria-label="Close"></button>
+                       <div className="row justify-content-center">
+                           <div className="col-md-4">
+                               <img src={product.image} alt={product.title} height="200px" width="180px" />
+                           </div>
+                        <div className="col-md-4">
+                            <h3>{product.title}</h3>
+                            <p className="load fw-bold">{product.price}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+
+  
+
     return (
-        <div>
-            <div className='row'>
-            <div className="col-md-4">
-                <img src={product.image} alt={product.title} 
-                height="200px" width="180px" />
-            </div>
-            <div className="col-md-4">
-                <h3>{product.title}</h3>
-                <p className="lead fw-bold">
-                    {product.qty} X ${product.price} = $
-                    {product.qty * product.price} 
-                </p>
-                <button className="btn btn-outline-dark me-4"
-                  onClick={()=>handleButton(product)}>
-                    <i className="fa fa-minus"></i>
-                </button>
-                <button className="btn btn-outline-dark"
-                  onClick={()=>handleButton(product)}>
-                    <i className="fa fa-plus"></i>
-                </button>
-            </div>
-         </div>
-    </div>
+        <>
+          {state.length !== 0 && state.map(product)}
+
+       </>
     );
 }
 
