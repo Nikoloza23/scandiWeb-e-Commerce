@@ -1,57 +1,32 @@
-import React from 'react';
-import Icon from '../../Icon/Vector.svg';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React from 'react'
+import "./navbar.css"
+import Icon from '../../Icon/svg 3.svg'
+import Icon1 from '../../Icon/$.svg'
+import Icon2 from '../../Icon/line.svg'
+import Icon3 from '../../Icon/Vector.svg'
+import Icon4 from '../../Icon/svg 19.svg'
 
-function Navbar() {
-   
-  const state = useSelector((state) => state)
-    
-  return (
-    <div className="row">
-    <nav className="navbar navbar-expand-lg navbar-light bg-white py-4 shadow-sm">
-      <div className="container">
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-   
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to='/products'>
-                MEN
-              </NavLink>
-            </li>
-          </ul>
-
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to='/products'>
-                WOMEN 
-              </NavLink>
-            </li>
-          </ul>
-
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to='/products'>
-                KID 
-              </NavLink>
-            </li>
-          </ul>
-
-
-          <div className='buttons'>
-              <a to='/registrer' className="text-decoration-none btn-outline-dark ms-2">
-              <i className=""></i>$</a>  
-
-              <NavLink to='/cart' className="text-decoration-none btn-outline-dark ms-2">
-              <img  src={Icon} alt='/' ></img>{state.length}
-              </NavLink>
-          </div>
+const Navbar = () =>{
+    return (
+        <div>
+           <div className="nav_container">
+                <div className="nav_container_item left_nav">
+                    <div>CLOTHES</div>
+                    <div>MEN</div>
+                    <div>WOMEN</div>
+                </div>
+                <div className="nav_container_item mid_nav">
+                    <div className="mid_nav_1_img"><img src={Icon} alt="/"/></div> 
+                    <div className="mid_nav_2_img"><img src={Icon4}/></div>
+                </div>
+                <div className="nav_container_item right_nav">
+                    <div className="dollar_icon"><img src={Icon1} /></div>
+                    <div className="arrow_icon"><img src={Icon2} /></div>
+                    <div className="rect_icon"><img src={Icon3} /></div>
+                </div>
+           </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  )
+    )
 }
-
 
 export default Navbar;
