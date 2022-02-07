@@ -2,13 +2,24 @@ import {  gql } from '@apollo/client'
 
 const  getAllCharacters = gql`
   {
-  category{
-     products{
-      id
+    categories {
       name
-      gallery
+      products{
+        attributes{
+          name
+          type
+        }
+        id
+        name
+        gallery
+        prices{
+          currency{
+            symbol
+          }
+          amount
+        }
+      }
     }
-  }
   }
   `
 
