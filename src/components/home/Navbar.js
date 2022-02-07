@@ -5,6 +5,7 @@ import Icon1 from '../../Icon/$.svg'
 import Icon2 from '../../Icon/line.svg'
 import Icon3 from '../../Icon/Vector.svg'
 import Icon4 from '../../Icon/svg 19.svg'
+import Data from '../pages/data/Data'
 
 const Navbar = () =>{
     return (
@@ -25,7 +26,9 @@ const Navbar = () =>{
                     <div className="rect_icon"><img src={Icon3} /></div>
                 </div>
            </div>
+           <Data/>
         </div>
+
     )
 }
 
