@@ -4,6 +4,7 @@ const  getAllCharacters = gql`
   {
   category{
      products{
+      id
       name
       gallery
     }
