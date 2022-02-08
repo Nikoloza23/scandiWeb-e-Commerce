@@ -1,6 +1,6 @@
 import {  gql } from '@apollo/client'
 
-const  getAllCharacters = gql`
+export const  GET_ALL_ITEMS = gql`
   {
     categories {
       name
@@ -23,4 +23,23 @@ const  getAllCharacters = gql`
   }
   `
 
-export { getAllCharacters }
+export const GET_CATEGORY = gql`
+ query nick($title:String!){
+  category(input:{title:$title}){
+    name
+    products{
+      name 
+      id
+      gallery
+      prices{
+        currency{
+          symbol
+        }
+        amount
+      }
+    }
+  }
+}
+`
+  
+

@@ -1,33 +1,30 @@
-import { useQuery } from '@apollo/client';
-import Card from '../../card/Card';
-import { getAllCharacters } from '../../pages/data/Queries'
+import { useQuery } from "@apollo/client";
+import Card from "../../card/Card";
+import { GET_CATEGORY } from "./Queries";
 
-function Data(){
-const {loading, error, data} = useQuery(getAllCharacters);
+function Data({ categoryName }) {
+  const { loading, error, data } = useQuery(GET_CATEGORY, {
+    variables: { title: categoryName },
+  });
 
-  if (loading){
-    return <p>Loading...</p>
+  if (error) {
+    return <p>Error...{error.message}</p>;
+  }
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
-  if (error){
-   return <p>Error...{error.message}</p>
- }
- console.log(data)
+  console.log(data);
+
   return (
     <>
-    <div className="row">
-      {data.categories.map(categorie =>{
-        return(
-          categorie.products.map(products => 
-            <Card  products={products} key={products.id}/>
-          )
-        )}
-        )}
-        </div>
+      <div className="row">
+        {data.category.products.map((products) => (
+            <Card products={products} key={products.id} />
+        ))}
+      </div>
     </>
-  )
+  );
 }
 
 export default Data;
-
-

@@ -5,18 +5,17 @@ import Icon1 from '../../Icon/$.svg'
 import Icon2 from '../../Icon/line.svg'
 import Icon3 from '../../Icon/Vector.svg'
 import Icon4 from '../../Icon/svg 19.svg'
-import Data from '../pages/data/Data'
 
 
 
-const Navbar = () =>{
+const Navbar = ({setCategoryName}) =>{
     return (
         <div>
         <div className="nav_container">
                 <div className="nav_container_item left_nav">
-                    <div>All</div>
-                    <div>CLOTHES</div>
-                    <div>TECH</div>
+                    <div onClick={()=>setCategoryName('all')}>All</div>
+                    <div onClick={()=>setCategoryName('clothes')}>CLOTHES</div>
+                    <div onClick={()=>setCategoryName('tech')}>TECH</div>
                 </div>
                 <div className="nav_container_item mid_nav">
                     <div className="mid_nav_1_img"><img src={Icon} alt="/"/></div> 
@@ -28,8 +27,8 @@ const Navbar = () =>{
                     <div className="rect_icon"><img src={Icon3} alt="/"/></div>
                 </div>
            </div>
-           <Data/>
         </div>
+        
     )
 }
 
