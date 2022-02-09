@@ -44,6 +44,10 @@
     height: 50%;
 }
 
+div {
+    color: black;
+}
+
 .right_nav{
     gap: 2px;
 }

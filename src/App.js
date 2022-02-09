@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import Navbar from "../src/components/home/Navbar";
+import {Route, Routes} from 'react-router-dom'
+import Home from "./components/home/Home";
 import "./App.css";
-import Data from "./components/pages/data/Data";
+import Api from "./components/routes/API";
 
-function App() {
-  const [categoryName, setCategoryName] = useState("all");
+function App(){ 
   return (
     <div className="App">
-      <Navbar setCategoryName={setCategoryName} />
-      <Data categoryName={categoryName} />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/products/:id' element={<Api/>} />
+    </Routes>
     </div>
   );
 }
-
 export default App;

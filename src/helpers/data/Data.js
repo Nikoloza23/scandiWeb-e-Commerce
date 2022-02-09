@@ -1,8 +1,11 @@
 import { useQuery } from "@apollo/client";
-import Card from "../../card/Card";
-import { GET_CATEGORY } from "./Queries";
+import Card from "../../components/card/Card";
+import { GET_CATEGORY } from "./getQueries";
 
-function Data({ categoryName }) {
+
+//same face to apollo
+//take list from GraphQl
+const Data = ({ categoryName }) =>{
   const { loading, error, data } = useQuery(GET_CATEGORY, {
     variables: { title: categoryName },
   });
@@ -21,6 +24,7 @@ function Data({ categoryName }) {
       <div className="row">
         {data.category.products.map((products) => (
             <Card products={products} key={products.id} />
+            
         ))}
       </div>
     </>
