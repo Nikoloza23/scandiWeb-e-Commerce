@@ -3,7 +3,6 @@
     padding: 1rem;
     box-shadow: 0 0 28px 4px rgb(126 122 122 / 10%);
     transition: transform .2s ease;
-    justify-content: center;
     width: 354.5px;
     height: 100%;
     bottom: 0%;
@@ -11,8 +10,8 @@
     left: -4.17%;
     top: -9.51%;
     padding: 2rem;
-
 }
+
 
 
 .card:hover{

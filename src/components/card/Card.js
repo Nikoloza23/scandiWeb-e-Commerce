@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./card.css";
 
 //Take home page data
 const Card = ({ products }) =>{

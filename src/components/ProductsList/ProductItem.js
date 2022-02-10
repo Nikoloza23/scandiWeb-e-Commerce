@@ -1,23 +1,22 @@
 import { Link } from "react-router-dom";
+import "./productItem.css";
 
 const ProductItem = ({ data }) => {
-  const { id, gallery, name, description } = data; 
+  const { id, gallery, name, prices } = data;
 
   return (
-    <li style={{margin: "10px  0", border: "1px solid black"}}>
-      <Link to={`/products/${products.id}`}>
-        <h1>{name}</h1>
-        <img
-          style={{ width: 80, height: 80 }}
-          src={gallery[1]}
-          alt={description}
-        />
-      </Link>
-    </li>
+    <div className="grid_container">
+      <div className="card">
+        <Link to={`/products/${id}`} style={{ textDecoration: "none" }}>
+          <img className="grid_item" src={`${gallery}`} />
+        </Link>
+        <div className="card-body">
+          <h5 className="card-title">{`${name}`}</h5>
+          <p className="card-text">{`${prices[0].currency.symbol} ${prices[0].amount}`}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
-
 export default ProductItem;
-
-

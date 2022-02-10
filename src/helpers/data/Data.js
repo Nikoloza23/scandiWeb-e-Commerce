@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import Card from "../../components/card/Card";
+import ProductItem from "../../components/ProductsList/ProductItem";
 import { GET_CATEGORY } from "./getQueries";
 
 
@@ -23,7 +24,7 @@ const Data = ({ categoryName }) =>{
     <>
       <div className="row">
         {data.category.products.map((products) => (
-            <Card products={products} key={products.id} />
+            <ProductItem  products={products} key={products.id} />
             
         ))}
       </div>
