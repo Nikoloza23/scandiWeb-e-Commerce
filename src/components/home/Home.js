@@ -1,33 +1,42 @@
-import React from 'react'
-// import Data from "../../helpers/data/Data"
-// import Navbar from "./navbar/Navbar";
-// import {useState} from 'react'
-//Make Filtration 
-// const Home = () =>{
-//   const [categoryName, setCategoryName] = useState("all");
-//    return(
-//    <div className="home">
-//      <Navbar setCategoryName={setCategoryName} />
-//       <Data categoryName={categoryName} />
-//    </div> 
-//    )
-// }
+import React from "react";
+import { gql, useQuery } from "@apollo/client";
 
-// export default Home;
+import ProductsList from "../ProductsList/list/ProductsList";
+
+const Home = ({ categoryName }) => {
+  const { data, loading, error } = useQuery(PTODUCT_CATEGORY_QUERY, {
+    variables: {title:categoryName},
+  });
 
 
-import ProductsList from '../ProductsList/ProductsList'
-import { fetchedData } from '../routes/list/fetchedData' 
-
-
-const Home = () => {
-    const data = fetchedData[0].data.category.products;
-    return (
-       <div>
-           <ProductsList data={data} />
-       </div>
-    
-    )
-}
-
+  if(loading) return <p>Loading...</p>
+  return (
+    <div>
+      <ProductsList data={data.category.products} />
+    </div>
+  );
+};
 export default Home;
+
+const PTODUCT_CATEGORY_QUERY = gql`
+  query nick($title: String!) {
+    category(input: { title: $title }) {
+      name
+      products {
+        id
+        name
+        gallery
+        description
+        attributes {
+          type
+        }
+        prices {
+          currency {
+            symbol
+          }
+          amount
+        }
+      }
+    }
+  }
+`;

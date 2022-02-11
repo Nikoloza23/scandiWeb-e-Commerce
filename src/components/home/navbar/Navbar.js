@@ -15,19 +15,25 @@ const Navbar = ({ setCategoryName }) => {
       <div className="nav_container">
         <div className="nav_container_item left_nav">
           <Link to="/" style={{ textDecoration: "none" }}>
-            <div onClick={() => setCategoryName("all")}>All</div>
+            <div className="color" onClick={() => setCategoryName("all")}>
+              All
+            </div>
           </Link>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <div onClick={() => setCategoryName("clothes")}>CLOTHES</div>
+            <div className="color" onClick={() => setCategoryName("clothes")}>
+              CLOTHES
+            </div>
           </Link>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <div onClick={() => setCategoryName("tech")}>TECH</div>
+            <div className="color" onClick={() => setCategoryName("tech")}>
+              TECH
+            </div>
           </Link>
         </div>
         <div className="nav_container_item mid_nav">
           <div className="mid_nav_1_img">
             <img src={Icon} alt="/" />
-            </div>
+          </div>
           <div className="mid_nav_2_img">
             <img src={Icon4} alt="/" />
           </div>
@@ -44,7 +50,7 @@ const Navbar = ({ setCategoryName }) => {
           </div>
         </div>
       </div>
-      <Header/>
+      <Header />
     </div>
   );
 };

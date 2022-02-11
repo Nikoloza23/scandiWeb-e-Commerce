@@ -15,12 +15,35 @@
 
 .nav_container_item div{
     cursor: pointer;
+    color: #1D1F22;
+    display: inline-block;
+    position: relative;
 }
+
+.nav_container_item div::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #5ECE7B;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+
+.nav_container_item div:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
 
 .mid_nav{
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
 }
 
 .mid_nav_1_img{
@@ -39,24 +62,27 @@
     position: absolute;
     top: 2px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-450%);
     width: 50%;
     height: 50%;
+
 }
 
-div {
-    color: black;
+.color {
+    color: #1D1F22;
 }
 
 .right_nav{
     gap: 2px;
+    
 }
 
 .rect_icon{
     margin-left: 10px;
+
 }
 
 .arrow_icon{
     transform: translateY(5px);
-}
+ }
 

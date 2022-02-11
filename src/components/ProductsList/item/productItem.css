@@ -1,15 +1,10 @@
 .card {
     margin: 3rem 2rem 2rem 4rem;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 0 28px 4px rgb(126 122 122 / 10%);
     transition: transform .2s ease;
-    width: 354.5px;
+    width: 260px;
     height: 100%;
-    bottom: 0%;
-    right: -119.44%;
-    left: -4.17%;
-    top: -9.51%;
-    padding: 2rem;
 }
 
 

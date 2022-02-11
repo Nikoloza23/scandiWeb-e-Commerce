@@ -1,0 +1,170 @@
+.product_img_container{
+    display: flex;
+    
+}
+
+
+.product_img_container_left_side{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.products_image_left{
+    width: 176.65px;
+    height: 176.65px;
+    cursor: pointer;
+
+}
+
+
+img.images {
+    width: 176.65px;
+    justify-content: center;
+    height: 176.65px;
+    background-position: center;
+    cursor: pointer;
+
+}
+
+.products_image_right{
+    width: 600.03px;
+    height: 559.5px;
+    cursor: pointer;
+}
+
+
+p.name{
+    position: absolute;
+    width: 292px;
+    left: 785px;
+    top: 390px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+}
+
+
+div {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #1D1F22;
+    align-items: center;
+}
+
+.products_sizes_container{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 300px;
+    height: 55px;    
+    cursor: pointer;
+
+}
+
+.products_sizes_container_item:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+
+
+.products_sizes_container_item{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1D1F22;
+    color:  #A6A6A6;
+}
+
+
+
+p.amount {
+    width: 86px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+}
+
+
+
+
+.price {
+    width: 50px;
+    height: 18px;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+h1.description {
+    position: absolute;
+    width: 200px;
+    height: 103px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 170.96%;
+    left: 790px;
+}
+
+button.products_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 32px;
+    position: initial;
+    width: 292px;
+    height: 52px;
+}
+
+
+
+.products_button{
+    width: 150px;
+    height: 75px;
+    background-color: #5ECE7B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+h1.text {
+    position: absolute;
+    top: 280px;
+    width: 292px;
+    height: 27px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+}
+
