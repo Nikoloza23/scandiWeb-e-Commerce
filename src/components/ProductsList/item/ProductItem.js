@@ -8,7 +8,7 @@ const ProductItem = ({ data }) => {
     <div className="cards-container">
       <Link to={`/products/${id}`} style={{ textDecoration: "none" }}>
         <div className="card">
-          <img className="grid_item" src={`${gallery}`} />
+          <img className="grid_item" src={`${gallery}`} alt="/" />
           <div className="card-body">
             <h5 className="card-title">{`${name}`}</h5>
             <p className="card-text">{`${prices[0].currency.symbol} ${prices[0].amount}`}</p>

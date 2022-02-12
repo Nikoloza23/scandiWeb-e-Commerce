@@ -32,6 +32,8 @@ const Home = ({ categoryName }) => {
   });
 
   if (loading) return <p>Loading...</p>;
+
+  if(error) return<p>Erorr...</p>
   return (
     <div>
       <Header />

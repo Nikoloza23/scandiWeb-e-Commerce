@@ -45,6 +45,8 @@ const ProductDetails = () => {
 
   if (loading) return <div>Loading...</div>;
 
+  if (error) return <div>Error...</div>;
+
   return (
     <>
       <div className="product_img_container">
@@ -63,6 +65,7 @@ const ProductDetails = () => {
           <img
             className="products_image_right"
             src={data.product.gallery[choosenPhoto]}
+            alt="/"
           />
         </div>
         <div className="type">{data.product.brand}</div>
