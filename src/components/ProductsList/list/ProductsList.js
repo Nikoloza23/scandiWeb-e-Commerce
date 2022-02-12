@@ -1,7 +1,8 @@
 import ProductItem from "../item/ProductItem";
-import "./productList.css"
+import "./productList.css";
 
 const ProductsList = ({ data }) => {
+
   return (
     <ul>
       {data.map((item) => {

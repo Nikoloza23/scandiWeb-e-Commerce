@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    margin-top: 50px;
+
 }
 
 .products_image_left{
@@ -19,18 +21,28 @@
 
 
 img.images {
-    width: 176.65px;
-    justify-content: center;
-    height: 176.65px;
-    background-position: center;
+    width: 150px;
+    height: 120px;
     cursor: pointer;
+    margin-bottom: 5px;
 
 }
 
+
+
+.products_text_container{
+    margin-left: 175px;
+    margin-top: 100px;
+}
+
+
+
 .products_image_right{
-    width: 600.03px;
-    height: 559.5px;
+    width: 400px;
+    height: 400px;
+    margin-left: 150px;
     cursor: pointer;
+    margin-top: 100px;
 }
 
 
@@ -38,7 +50,7 @@ p.name{
     position: absolute;
     width: 292px;
     left: 785px;
-    top: 390px;
+    top: 260px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 600;
@@ -47,6 +59,27 @@ p.name{
     display: flex;
     align-items: center;
     color: #1D1F22;
+    margin-left: 100px;
+    transform: translateY(-150px);
+}
+
+
+.type {
+    transform: translateY(-150px);
+    position: absolute;
+    width: 292px;
+    height: 27px;
+    top: 330px;
+    left: 786px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+    margin-left: 100px;
 }
 
 
@@ -118,15 +151,18 @@ p.amount {
 
 h1.description {
     position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
     width: 200px;
-    height: 103px;
-    font-family: Roboto;
+    height: 200px;
+    overflow: auto;
     font-style: normal;
-    font-weight: 300;
-    font-size: 26px;
-    line-height: 170.96%;
+    font-size: 80%;
+    line-height: 80.96%;
     left: 790px;
+    margin-left: 100px;
 }
+
 
 button.products_button {
     display: flex;

@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import "./productItem.css";
 
-
-
 const ProductItem = ({ data }) => {
   const { id, gallery, name, prices } = data;
 

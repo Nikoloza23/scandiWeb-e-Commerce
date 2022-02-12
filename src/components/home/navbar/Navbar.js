@@ -6,7 +6,6 @@ import Icon2 from "../../../assets/line.svg";
 import Icon3 from "../../../assets/Vector.svg";
 import Icon4 from "../../../assets/svg 19.svg";
 import { Link } from "react-router-dom";
-import Header from "../header/Header";
 
 //make navbar with filter components
 const Navbar = ({ setCategoryName }) => {
@@ -50,7 +49,6 @@ const Navbar = ({ setCategoryName }) => {
           </div>
         </div>
       </div>
-      <Header />
     </div>
   );
 };

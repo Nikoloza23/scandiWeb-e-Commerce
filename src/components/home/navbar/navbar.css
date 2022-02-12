@@ -20,7 +20,7 @@
     position: relative;
 }
 
-.nav_container_item div::after{
+.nav_container_item div.color::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -34,7 +34,7 @@
 }
 
 
-.nav_container_item div:hover::after{
+.nav_container_item div.color:hover::after{
     transform: scaleX(1);
     transform-origin: bottom left;
   }
