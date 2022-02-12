@@ -7,7 +7,7 @@ const ProductsList = ({ data }) => {
     <ul>
       {data.map((item) => {
         return (
-          <li key={item.id} style={{ "list-style": "none" }}>
+          <li key={item.id} style={{ "listStyle": "none" }}>
             <ProductItem data={item} />
           </li>
         );

@@ -2,6 +2,10 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../../redux/reducer/action/action'
+
+
 
 import "./productDetails.css";
 
@@ -37,8 +41,13 @@ const GET_PRODUCT_DETAILS_QUERY = gql`
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const [product, setProduct] = useState([]);
   const [choosenPhoto, setChoosenPhoto] = useState(0);
 
+  const dispatch = useDispatch();
+  const addProduct = (product) =>{
+      dispatch(addCart(product));
+  }  
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
   });
@@ -83,10 +92,10 @@ const ProductDetails = () => {
             data.product.prices[0].currency.symbol +
             data.product.prices[0].amount
           }`}</p>
-          <button className="products_button">Add To Chart</button>
+         <button onClick={()=>addProduct(product)} className="products_button">Add To Chart</button>
           <h1 className="description">{data.product.description}</h1>
         </div>
-      </div>
+      </div> 
     </>
   );
 };

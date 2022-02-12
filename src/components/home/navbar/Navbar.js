@@ -6,9 +6,14 @@ import Icon2 from "../../../assets/line.svg";
 import Icon3 from "../../../assets/Vector.svg";
 import Icon4 from "../../../assets/svg 19.svg";
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 //make navbar with filter components
 const Navbar = ({ setCategoryName }) => {
+
+  const state = useSelector((state) => state.handleCart)
+
+   console.log(state)
   return (
     <div>
       <div className="nav_container">
@@ -44,13 +49,16 @@ const Navbar = ({ setCategoryName }) => {
           <div className="arrow_icon">
             <img src={Icon2} alt="/" />
           </div>
+          <Link to='/cart'>
           <div className="rect_icon">
-            <img src={Icon3} alt="/" />
+            <img src={Icon3} alt="/" />({state.length })
           </div>
+          </Link>
         </div>
       </div>
     </div>
   );
-};
+};    
+
 
 export default Navbar;
