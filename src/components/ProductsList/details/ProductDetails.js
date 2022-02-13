@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addCart } from '../../../redux/reducer/action/action'
+import { addCart } from '../../../redux/action/index'
 
 
 
@@ -47,6 +47,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const addProduct = (product) =>{
       dispatch(addCart(product));
+      setProduct(product)
   }  
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },

@@ -7,7 +7,6 @@ import Icon3 from "../../../assets/Vector.svg";
 import Icon4 from "../../../assets/svg 19.svg";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
 //make navbar with filter components
 const Navbar = ({ setCategoryName }) => {
 

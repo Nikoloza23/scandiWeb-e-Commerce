@@ -14,3 +14,5 @@ export const addCart = (product) =>{
          payload: product
      }
   }
+
+  
