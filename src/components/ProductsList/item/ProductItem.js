@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./productItem.css";
 
-
 const ProductItem = ({ data }) => {
   const { id, gallery, name, prices } = data;
 
@@ -14,7 +13,7 @@ const ProductItem = ({ data }) => {
             <h5 className="card-title">{`${name}`}</h5>
             <p className="card-text">{`${prices[0].currency.symbol} ${prices[0].amount}`}</p>
           </div>
-        </div> 
+        </div>
       </Link>
     </div>
   );

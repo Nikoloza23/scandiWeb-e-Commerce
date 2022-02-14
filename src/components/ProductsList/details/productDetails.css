@@ -49,7 +49,7 @@ p.name{
     position: absolute;
     width: 292px;
     left: 785px;
-    top: 260px;
+    top: 248px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 600;
@@ -81,7 +81,6 @@ p.name{
     margin-left: 100px;
 }
 
-
 div {
     font-family: Roboto Condensed;
     font-style: normal;
@@ -102,6 +101,12 @@ div {
 
 }
 
+.scand{
+    height: 90%;
+    width: 90%;
+    margin-right: 10px;
+}
+
 .products_sizes_container_item:hover{
     cursor: pointer;
     background-color: black;
@@ -110,8 +115,9 @@ div {
 
 
 .products_sizes_container_item{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    margin-left: 5px;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,6 +209,10 @@ h1.text {
     color: #1D1F22;
 }
 
+.type{
+    margin-top: -20px;
+}
+
 @media  (max-width: 1300px) {
     p.name{
         position: absolute;
@@ -223,6 +233,7 @@ h1.text {
      height: 110%;
      justify-content: center;
   }
+
     .products_image_right
     {
         position: absolute;
@@ -231,10 +242,18 @@ h1.text {
         justify-content: center;
         
     }
+
+
+
+
     .nik{
         position: absolute;
         left: 10px;
-        margin-top: 470px;
+        width: 100px;
+        height: 100px;
+        font-size: 23px;
+        line-height: 3;
+        top: 800px;
     }
     .products_sizes_container{
         position: absolute;

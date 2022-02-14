@@ -2,9 +2,6 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { addCart } from '../../../redux/action/index'
-
 
 
 import "./productDetails.css";
@@ -41,17 +38,13 @@ const GET_PRODUCT_DETAILS_QUERY = gql`
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
   const [choosenPhoto, setChoosenPhoto] = useState(0);
+  const [size, setSize ] = useState();
 
-  const dispatch = useDispatch();
-  const addProduct = (product) =>{
-      dispatch(addCart(product));
-      setProduct(product)
-  }  
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
   });
+  console.log(data);
 
   if (loading) return <div>Loading...</div>;
 
@@ -81,22 +74,48 @@ const ProductDetails = () => {
         <div className="type">{data.product.brand}</div>
         <div className="products_text_container">
           <p className="name">{data.product.name}</p>
-          <div className="nik">SIZE:</div>
-          <div className="products_sizes_container">
-            <div className="products_sizes_container_item">XS</div>
-            <div className="products_sizes_container_item">S</div>
-            <div className="products_sizes_container_item">M</div>
-            <div className="products_sizes_container_item">L</div>
-          </div>
+          {data.product.attributes.map((attribute) => {
+            return (
+              <div key={attribute.id}>
+                <div className="nik">{attribute.name}</div>
+                <div className="products_sizes_container">
+                  {attribute.items.map((item) => {
+                    if (attribute.name === "Color") {
+                      return (
+                        <div
+                          className="scand"
+                          key={item.id}
+                          style={{ backgroundColor: item.value }}
+                        />
+                      );
+                    }
+
+                    return (
+                      <div
+                        key={item.id}
+                        className="products_sizes_container_item"
+                      >
+                        {item.value}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
           <h1 className="price">Price:</h1>
           <p className="amount">{`${
             data.product.prices[0].currency.symbol +
             data.product.prices[0].amount
           }`}</p>
-         <button onClick={()=>addProduct(product)} className="products_button">Add To Chart</button>
+          <button
+            className="products_button"
+          >
+            Add To Chart
+          </button>
           <h1 className="description">{data.product.description}</h1>
         </div>
-      </div> 
+      </div>
     </>
   );
 };
