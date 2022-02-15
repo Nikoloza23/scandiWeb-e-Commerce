@@ -25,7 +25,7 @@ const PTODUCT_CATEGORY_QUERY = gql`
     }
   }
 `;
-
+//make filtration to products
 const Home = ({ categoryName }) => {
   const { data, loading, error } = useQuery(PTODUCT_CATEGORY_QUERY, {
     variables: { title: categoryName },
@@ -33,7 +33,7 @@ const Home = ({ categoryName }) => {
 
   if (loading) return <p>Loading...</p>;
 
-  if(error) return<p>Erorr...</p>
+  if (error) return <p>Erorr...</p>;
   return (
     <div>
       <Header />

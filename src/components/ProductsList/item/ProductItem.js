@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./productItem.css";
 
+//Take data from Graphql
 const ProductItem = ({ data }) => {
   const { id, gallery, name, prices } = data;
 

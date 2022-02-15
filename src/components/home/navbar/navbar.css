@@ -20,6 +20,18 @@
     position: relative;
 }
 
+
+select.selector {
+    width: 19px;
+    height: 15px;
+    border: 1px solid white;
+    cursor: pointer;
+    overflow: visible !important;
+    -webkit-writing-mode: horizontal-tb;
+    font-style: italic;
+    color: black;
+    background-color: white;
+}
 .nav_container_item div.color::after{
     content: '';
     position: absolute;

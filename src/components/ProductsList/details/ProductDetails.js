@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-
 import "./productDetails.css";
 
 const GET_PRODUCT_DETAILS_QUERY = gql`
@@ -28,6 +27,7 @@ const GET_PRODUCT_DETAILS_QUERY = gql`
       prices {
         currency {
           symbol
+          label
         }
         amount
       }
@@ -36,10 +36,12 @@ const GET_PRODUCT_DETAILS_QUERY = gql`
   }
 `;
 
+
+//make ProductDetails after click on Products 
+//see product sizes,color,price and else...
 const ProductDetails = () => {
   const { id } = useParams();
   const [choosenPhoto, setChoosenPhoto] = useState(0);
-  const [size, setSize ] = useState();
 
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
@@ -77,8 +79,8 @@ const ProductDetails = () => {
           {data.product.attributes.map((attribute) => {
             return (
               <div key={attribute.id}>
-                <div className="nik">{attribute.name}</div>
                 <div className="products_sizes_container">
+                  <div className="nik">{attribute.name}:</div>
                   {attribute.items.map((item) => {
                     if (attribute.name === "Color") {
                       return (
@@ -108,11 +110,7 @@ const ProductDetails = () => {
             data.product.prices[0].currency.symbol +
             data.product.prices[0].amount
           }`}</p>
-          <button
-            className="products_button"
-          >
-            Add To Chart
-          </button>
+          <button className="products_button">Add To Chart</button>
           <h1 className="description">{data.product.description}</h1>
         </div>
       </div>
