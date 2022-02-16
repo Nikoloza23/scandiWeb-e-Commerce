@@ -25,6 +25,7 @@ const PTODUCT_CATEGORY_QUERY = gql`
     }
   }
 `;
+
 //make filtration to products
 const Home = ({ categoryName }) => {
   const { data, loading, error } = useQuery(PTODUCT_CATEGORY_QUERY, {
