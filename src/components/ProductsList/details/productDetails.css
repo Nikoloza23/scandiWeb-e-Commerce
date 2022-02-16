@@ -164,16 +164,20 @@ h1.description {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
-    width: 200px;
+    width: 400px;
     height: 200px;
-    overflow: auto;
+    overflow: hidden;
     font-style: normal;
-    font-size: 80%;
-    line-height: 80.96%;
-    left: 790px;
+    font-size: unset;
+    line-height: 100%;
+    left: 785px;
     margin-left: 100px;
 }
 
+h1 {
+    font-size: 12px;
+    line-height: 10px;
+}
 
 button.products_button {
     display: flex;
@@ -259,9 +263,9 @@ h1.text {
         margin-bottom: -950px;
     }
 
-    /*.products_sizes_container_item{
+    .products_sizes_container_item{
        position: relative;
-       margin-left: -50px;       
+       margin-left: -10px;       
        margin-bottom: -950px;
     }
 
@@ -270,7 +274,7 @@ h1.text {
         width: 200px;
         height: 75px;
         cursor: pointer;
-    } */
+    }
 
     h1.price{
         position: absolute;

@@ -2,41 +2,11 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { currencyContext } from "../../../context/currencyContext";
+import React, { useContext } from "react";
+
 
 import "./productDetails.css";
-
-const GET_PRODUCT_DETAILS_QUERY = gql`
-  query getProductDetails($id: String!) {
-    product(id: $id) {
-      id
-      name
-      inStock
-      gallery
-      description
-      category
-      attributes {
-        id
-        name
-        type
-        items {
-          id
-          value
-          displayValue
-        }
-      }
-      prices {
-        currency {
-          symbol
-          label
-        }
-        amount
-      }
-      brand
-    }
-  }
-`;
-
-
 //make ProductDetails after click on Products 
 //see product sizes,color,price and else...
 const ProductDetails = () => {
@@ -46,11 +16,11 @@ const ProductDetails = () => {
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
   });
-  console.log(data);
 
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>Error...</div>;
+
 
   return (
     <>
@@ -106,12 +76,10 @@ const ProductDetails = () => {
             );
           })}
           <h1 className="price">Price:</h1>
-          <p className="amount">{`${
-            data.product.prices[0].currency.symbol +
-            data.product.prices[0].amount
-          }`}</p>
+          <p className="amount" >
+          {data.product.prices[0].currency.symbol}{data.product.prices[0].amount}</p>
           <button className="products_button">Add To Chart</button>
-          <h1 className="description">{data.product.description}</h1>
+          <h1  className="description"  dangerouslySetInnerHTML={{__html: data.product.description}} ></h1>
         </div>
       </div>
     </>
@@ -119,3 +87,35 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+
+const GET_PRODUCT_DETAILS_QUERY = gql`
+  query getProductDetails($id: String!) {
+    product(id: $id) {
+      id
+      name
+      inStock
+      gallery
+      description
+      category
+      attributes {
+        id
+        name
+        type
+        items {
+          id
+          value
+          displayValue
+        }
+      }
+      prices {
+        currency {
+          symbol
+          label
+        }
+        amount
+      }
+      brand
+    }
+  }
+`;
