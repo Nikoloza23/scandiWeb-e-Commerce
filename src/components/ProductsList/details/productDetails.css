@@ -263,18 +263,32 @@ h1.text {
         margin-bottom: -950px;
     }
 
-    .products_sizes_container_item{
-       position: relative;
-       margin-left: -10px;       
-       margin-bottom: -950px;
+    /* .products_sizes_container_item{
+        width: 100px;
+        height: 50%;
+        justify-content: center;
+        border: 1px solid #1D1F22;
+        color: #A6A6A6;
+        margin-left: 10px;
+        margin-top: 900px;
+        position: relative;
+        left: -490px;
+        margin-top: 920px;
     }
 
     .products_sizes_container{
+        justify-content: space-between;
         box-sizing: border-box;
-        width: 200px;
-        height: 75px;
+        width: 300px;
+        height: 55px;
+        margin-left: 300px;
         cursor: pointer;
     }
+    .scand{
+        position: relative;
+        margin-top: 930px;
+        left: -500px;
+    } */
 
     h1.price{
         position: absolute;
@@ -294,7 +308,7 @@ h1.text {
     }
     h1.description{
         position: absolute;
-        left: 50px;
+        left: 10px;
         margin-top: 680px;
         font-family: sans-serif 'Poppins';
     }

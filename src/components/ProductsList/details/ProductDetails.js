@@ -5,13 +5,16 @@ import { useParams } from "react-router-dom";
 import { currencyContext } from "../../../context/currencyContext";
 import React, { useContext } from "react";
 
-
 import "./productDetails.css";
 //make ProductDetails after click on Products 
 //see product sizes,color,price and else...
 const ProductDetails = () => {
   const { id } = useParams();
   const [choosenPhoto, setChoosenPhoto] = useState(0);
+
+  const { choosenCurrency } = useContext(currencyContext);
+
+
 
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
@@ -76,8 +79,9 @@ const ProductDetails = () => {
             );
           })}
           <h1 className="price">Price:</h1>
-          <p className="amount" >
-          {data.product.prices[0].currency.symbol}{data.product.prices[0].amount}</p>
+          <p className="amount">
+          {`${data.product.prices[choosenCurrency].currency.symbol}`}{`${data.product.prices[choosenCurrency].amount}`}
+          </p>
           <button className="products_button">Add To Chart</button>
           <h1  className="description"  dangerouslySetInnerHTML={{__html: data.product.description}} ></h1>
         </div>
