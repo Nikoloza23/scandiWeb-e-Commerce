@@ -51,7 +51,7 @@ const ProductDetails = () => {
           <p className="name">{data.product.name}</p>
           {data.product.attributes.map((attribute) => {
             return (
-              <div key={attribute.id}>
+              <div key={attribute.id} >
                 <div className="products_sizes_container">
                   <div className="nik">{attribute.name}:</div>
                   {attribute.items.map((item) => {
@@ -70,7 +70,10 @@ const ProductDetails = () => {
                         key={item.id}
                         className="products_sizes_container_item"
                       >
-                        {item.value}
+                        <div>
+                          {item.value}
+                          </div>
+                       
                       </div>
                     );
                   })}

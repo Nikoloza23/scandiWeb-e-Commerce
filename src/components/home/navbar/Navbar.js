@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import "./navbar.css";
 import Icon from "../../../../src/assets/svg 3.svg";
-import Icon1 from "../../../assets/$.svg";
 import Icon3 from "../../../assets/Vector.svg";
 import Icon4 from "../../../assets/svg 19.svg";
 import { Link } from "react-router-dom";
 import { currencyContext } from "../../../context/currencyContext";
 
+
 //make navbar with filter components
 const Navbar = ({ setCategoryName }) => {
-  const { data, setChoosenCurrency } = useContext(currencyContext);
+  const { data, setChoosenCurrency} = useContext(currencyContext);
+ 
+
 
   const onSelectClick = (event) => {
     const selectedCurrency = event.target.value;
@@ -28,6 +30,7 @@ const Navbar = ({ setCategoryName }) => {
       setChoosenCurrency(0);
     }
   };
+  
 
   return (
     <div>
@@ -59,10 +62,8 @@ const Navbar = ({ setCategoryName }) => {
           </div>
         </div>
         <div className="nav_container_item right_nav">
-          <div className="dollar_icon">
-            <img src={Icon1} alt="/" />
-          </div>
           <div className="arrow_icon">
+
             <select className="selector" onClick={onSelectClick}>
               {data?.currencies.map((currency) => (
                 <option key={currency.symbol} value={currency.label}>
@@ -70,6 +71,7 @@ const Navbar = ({ setCategoryName }) => {
                 </option>
               ))}
             </select>
+            
           </div>
           <Link to="/cart">
             <div className="rect_icon">
