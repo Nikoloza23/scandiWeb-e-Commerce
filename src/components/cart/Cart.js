@@ -1,46 +1,25 @@
-/* import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { delCart } from "../../redux/action/index";
+import React, { useReducer, useContext, createContext} from 'react';
 
-const Cart = () => {
-  const state = useSelector((state) => state);
-  const dispatch = useDispatch();
+const CartStateContext = createContext()
+const CartDispatchContext = createContext()
 
-  const handleClose = (item) => {
-    dispatch(delCart(item));
-  };
+const reducer = (state, action) =>{
+  switch(action.type){
+    default:
+    throw new Error(`uknown action ${action.type}`)
+  }
+}
 
-  const product = (product) => {
-    return (
-      <div key={product.id}>
-        <div className="container">
-          <button
-            onClick={() => handleClose(product)}
-            className="btn-close float-end"
-            aria-label="Close"
-          ></button>
-          <div className="row justify-content-center">
-            <div className="col-md-4">
-              <img
-                src={product.image}
-                alt={product.title}
-                height="200px"
-                width="180px"
-              />
-            </div>
-            <div className="col-md-4">
-              <h3>{product.title}</h3>
-              <p className="load fw-bold">{product.price}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+export const CartProvider = ({children}) => {
+  const [state, dispatch] = useReducer(reducer, []);
+  return(
+    <CartDispatchContext.Provider value={dispatch}>
+    <CartStateContext.Provider value={state}>
+       {children}
+     </CartStateContext.Provider> 
+    </CartDispatchContext.Provider>
+  )
+}
 
-  return <>{state.length === 0 && state.map(product)}</>;
-};
-
-export default Cart;
- */
-
+export const useCart = () => useContext(CartStateContext)
+export const useDispatchCart = () => useContext(CartDispatchContext)
