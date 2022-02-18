@@ -2,19 +2,27 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { currencyContext } from "../../../context/currencyContext";
+import { currencyContext } from "../../context/currencyContext";
 import React, { useContext } from "react";
+import { addCart } from '../../../redux/action/index'
+import { useDispatch} from 'react-redux';
+
 
 import "./productDetails.css";
-//make ProductDetails after click on Products 
+//make ProductDetails after click on Products
 //see product sizes,color,price and else...
 const ProductDetails = () => {
   const { id } = useParams();
   const [choosenPhoto, setChoosenPhoto] = useState(0);
-
   const { choosenCurrency } = useContext(currencyContext);
+  const [product, setProduct] = useState([]);
 
+  const dispatch = useDispatch();
 
+  const addProduct = (product) =>{
+      dispatch(addCart(product));
+  }
+  
 
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
@@ -23,7 +31,6 @@ const ProductDetails = () => {
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>Error...</div>;
-
 
   return (
     <>
@@ -51,7 +58,7 @@ const ProductDetails = () => {
           <p className="name">{data.product.name}</p>
           {data.product.attributes.map((attribute) => {
             return (
-              <div key={attribute.id} >
+              <div key={attribute.id}>
                 <div className="products_sizes_container">
                   <div className="nik">{attribute.name}:</div>
                   {attribute.items.map((item) => {
@@ -70,10 +77,7 @@ const ProductDetails = () => {
                         key={item.id}
                         className="products_sizes_container_item"
                       >
-                        <div>
-                          {item.value}
-                          </div>
-                       
+                        <div>{item.value}</div>
                       </div>
                     );
                   })}
@@ -83,18 +87,27 @@ const ProductDetails = () => {
           })}
           <h1 className="price">Price:</h1>
           <p className="amount">
-          {`${data.product.prices[choosenCurrency].currency.symbol}`}{`${data.product.prices[choosenCurrency].amount}`}
+            {`${data.product.prices[choosenCurrency].currency.symbol}`}
+            {`${data.product.prices[choosenCurrency].amount}`}
           </p>
-          <button className="products_button">Add To Chart</button>
-          <h1  className="description"  dangerouslySetInnerHTML={{__html: data.product.description}} ></h1>
+          <button
+            className="products_button"
+            onClick={()=>addProduct(product)}
+          >
+            Add To Chart
+          </button>
+          <h1
+            className="description"
+            dangerouslySetInnerHTML={{ __html: data.product.description }}
+          ></h1>
         </div>
       </div>
+      
     </>
   );
 };
 
 export default ProductDetails;
-
 
 const GET_PRODUCT_DETAILS_QUERY = gql`
   query getProductDetails($id: String!) {

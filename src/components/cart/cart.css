@@ -1,0 +1,162 @@
+
+
+.cart{
+    position: absolute;
+    width: 84px;
+    height: 40px;
+    left: 50px;
+    top: 100px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #1D1F22;
+    
+}
+
+.name_cart{
+    position: absolute;
+    width: 292px;
+    height: 27px;
+    left: 101px;
+    top: 220px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+    margin-bottom: 10px;
+}
+
+.cart_title{
+    position: absolute;
+    width: 292px;
+    height: 27px;
+    left: 101px;
+    top: 260px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+}
+
+.cart_price{
+    position: absolute;
+    width: 86px;
+    height: 46px;
+    left: 100px;
+    top: 360px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+}
+
+.boxes{
+    position: relative;
+    top: 15px;
+    left: -5px;
+}
+
+.cart_box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50px;
+    margin-top: 5px;
+    height: 35px;
+    cursor: pointer;
+    left: 100px;
+    top: 280px;
+    border: 1px solid black;
+    margin-left: -2px;
+}
+
+.cart_box2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50px;
+    margin-top: 5px;
+    height: 35px;
+    cursor: pointer;
+    right: -160px;
+    top: 240px;
+    border: 1px solid black;
+}
+
+
+.icrement{
+    position: absolute;
+   left: 900px;
+   border: 1px solid #1D1F22;
+   box-sizing: border-box;
+   width: 50px;
+   display: flex;
+   justify-content: center;
+   height: 35px;
+   top: 250px;
+}
+
+.icrement:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+.decrement{
+    position: absolute;
+   left: 900px;
+   top: 380px;
+   border: 1px solid #1D1F22;
+   box-sizing: border-box;
+   width: 50px;
+   display: flex;
+   justify-content: center;
+   height: 35px;
+}
+
+div.decrement:hover{
+    cursor: pointer;
+    background-color:darksalmon;
+}
+
+@media (max-width:1300px){
+    .cart{
+     left: 10px;
+    }
+    .boxes{
+        left: -100px;
+    }
+    .cart_price{
+        left: 10px;
+        top: 360px;
+    }
+    .cart_title{
+        left: 10px;
+    }
+    .name_cart{
+        left: 10px;
+    }
+    .icrement{
+        left: 220px;
+    }
+    .decrement{
+        left: 220px;
+    }
+
+}

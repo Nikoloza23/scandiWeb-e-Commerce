@@ -4,13 +4,15 @@ import Icon from "../../../../src/assets/svg 3.svg";
 import Icon3 from "../../../assets/Vector.svg";
 import Icon4 from "../../../assets/svg 19.svg";
 import { Link } from "react-router-dom";
-import { currencyContext } from "../../../context/currencyContext";
+import { currencyContext } from "../../context/currencyContext";
+import { useSelector } from 'react-redux';
 
 
 //make navbar with filter components
 const Navbar = ({ setCategoryName }) => {
   const { data, setChoosenCurrency} = useContext(currencyContext);
  
+  const state = useSelector((state) => state)
 
 
   const onSelectClick = (event) => {
@@ -30,7 +32,8 @@ const Navbar = ({ setCategoryName }) => {
       setChoosenCurrency(0);
     }
   };
-  
+ 
+  console.log(state)
 
   return (
     <div>
@@ -75,7 +78,8 @@ const Navbar = ({ setCategoryName }) => {
           </div>
           <Link to="/cart">
             <div className="rect_icon">
-              <img src={Icon3} alt="/" />
+              <img src={Icon3} alt="/"  />
+              <div className="length">{state.length}</div>
             </div>
           </Link>
         </div>

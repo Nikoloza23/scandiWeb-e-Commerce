@@ -83,14 +83,25 @@ select.selector {
     color: #1D1F22;
 }
 
+.length {
+    z-index: 1;
+    padding: 7px;
+    height: 11px;
+    background-color: darkgrey;
+    border-radius: 50%;
+    top: -41px;
+    left: 13px;
+}
+
 .right_nav{
     gap: 2px;
     
 }
 
-.rect_icon{
-    margin-left: 10px;
-
+.rect_icon {
+    position: relative;
+    top: 15px;
+    width: 23px;
 }
 
 .arrow_icon{

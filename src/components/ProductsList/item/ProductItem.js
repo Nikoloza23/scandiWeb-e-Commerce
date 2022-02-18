@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./productItem.css";
-import { currencyContext } from "../../../context/currencyContext";
+import { currencyContext } from "../../context/currencyContext";
 
 //Take data from Graphql
 const ProductItem = ({ data }) => {

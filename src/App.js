@@ -7,6 +7,7 @@ import ProductDetails from "./components/ProductsList/details/ProductDetails";
 import Navbar from "./components/home/navbar/Navbar";
 import Cart from "./components/cart/Cart";
 
+
 function App() {
   const [categoryName, setCategoryName] = useState("all");
 
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home categoryName={categoryName} />} />
         <Route path="/products/:id" element={<ProductDetails />} />
-        {/* <Route path="/cart" element={<Cart />} /> */}
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </div>
   );
