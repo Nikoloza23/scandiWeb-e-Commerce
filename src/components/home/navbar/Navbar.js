@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux';
 const Navbar = ({ setCategoryName }) => {
   const { data, setChoosenCurrency} = useContext(currencyContext);
  
-  const state = useSelector((state) => state)
+  const state = useSelector((state) => state.handleCart)
 
 
   const onSelectClick = (event) => {

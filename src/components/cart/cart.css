@@ -1,4 +1,6 @@
-
+.cart_container{
+    max-width: 1200px;
+}
 
 .cart{
     position: absolute;
@@ -13,7 +15,6 @@
     line-height: 40px;
     text-transform: uppercase;
     color: #1D1F22;
-    
 }
 
 .name_cart{
@@ -21,7 +22,7 @@
     width: 292px;
     height: 27px;
     left: 101px;
-    top: 220px;
+    top: 195px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 600;
@@ -38,7 +39,7 @@
     width: 292px;
     height: 27px;
     left: 101px;
-    top: 260px;
+    top: 240px;
     font-family: Raleway;
     font-style: normal;
     font-weight: normal;
@@ -49,12 +50,12 @@
     color: #1D1F22;
 }
 
-.cart_price{
+.cart_prices{
     position: absolute;
     width: 86px;
     height: 46px;
     left: 100px;
-    top: 360px;
+    top: 310px;
     font-family: Raleway;
     font-style: normal;
     font-weight: bold;
@@ -65,10 +66,12 @@
     color: #1D1F22;
 }
 
+
+
 .boxes{
     position: relative;
-    top: 15px;
-    left: -5px;
+    top: 35px;
+    left: -10px;
 }
 
 .cart_box{
@@ -102,15 +105,16 @@
 
 
 .icrement{
-    position: absolute;
-   left: 900px;
+   position: absolute;
+   left: 650px;
    border: 1px solid #1D1F22;
    box-sizing: border-box;
    width: 50px;
    display: flex;
    justify-content: center;
-   height: 35px;
+   height: 45px;
    top: 250px;
+   border-radius: 50%;
 }
 
 .icrement:hover{
@@ -120,43 +124,83 @@
 
 .decrement{
     position: absolute;
-   left: 900px;
+   left: 650px;
    top: 380px;
    border: 1px solid #1D1F22;
    box-sizing: border-box;
    width: 50px;
    display: flex;
    justify-content: center;
-   height: 35px;
+   height: 45px;
+   border-radius: 50%;
 }
 
 div.decrement:hover{
     cursor: pointer;
     background-color:darksalmon;
+} 
+
+
+.delete{
+    position: relative;
+    left: 1200px;
+    margin-top: 70px;
+}
+
+.cart_image{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: 900px;
+    top: 200px;
+}
+
+.cart_id{
+    position: relative;
+    left: 100px;
+    top: 200px;
+    font-size: 24px;
+    font-weight: 100;
 }
 
 @media (max-width:1300px){
+      .delete{
+          position: relative;
+         left: 10px;
+         top: 200px;
+     }
     .cart{
      left: 10px;
     }
-    .boxes{
+     .boxes{
         left: -100px;
+        top: 330px;
     }
-    .cart_price{
+    .cart_prices{
         left: 10px;
-        top: 360px;
-    }
+        top: 620px;
+    }  
     .cart_title{
         left: 10px;
+        top: 185px;
+
     }
     .name_cart{
         left: 10px;
+        top: 150px;
     }
     .icrement{
-        left: 220px;
+        left: 10px;
+        top: 450px;
     }
     .decrement{
-        left: 220px;
+        left: 10px;
+        top: 500px;
+    }
+    .cart_image{
+        left: 150px;
+        top: 300px;
+
     }
 
 }

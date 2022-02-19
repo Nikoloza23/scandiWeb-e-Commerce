@@ -4,25 +4,24 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { currencyContext } from "../../context/currencyContext";
 import React, { useContext } from "react";
-import { addCart } from '../../../redux/action/index'
-import { useDispatch} from 'react-redux';
-
+import { addCart } from "../../../redux/action/index";
+import { useDispatch } from "react-redux";
 
 import "./productDetails.css";
 //make ProductDetails after click on Products
 //see product sizes,color,price and else...
 const ProductDetails = () => {
   const { id } = useParams();
+  const [selectedSize, setSelectedSize] = useState("none")
   const [choosenPhoto, setChoosenPhoto] = useState(0);
   const { choosenCurrency } = useContext(currencyContext);
-  const [product, setProduct] = useState([]);
 
   const dispatch = useDispatch();
 
-  const addProduct = (product) =>{
-      dispatch(addCart(product));
-  }
-  
+  const addProduct = (product) => {
+    console.log(product);
+    dispatch(addCart(product));
+  };
 
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
     variables: { id },
@@ -92,7 +91,7 @@ const ProductDetails = () => {
           </p>
           <button
             className="products_button"
-            onClick={()=>addProduct(product)}
+            onClick={() => addProduct(data.product)}
           >
             Add To Chart
           </button>
@@ -102,7 +101,6 @@ const ProductDetails = () => {
           ></h1>
         </div>
       </div>
-      
     </>
   );
 };
