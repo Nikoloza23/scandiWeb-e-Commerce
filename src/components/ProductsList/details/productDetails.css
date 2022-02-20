@@ -269,6 +269,7 @@ h1.text {
         line-height: 18px;
     }
     .products_sizes_container_item {
+        position: relative;
         width: 100px;
         height: 50%;
         justify-content: center;

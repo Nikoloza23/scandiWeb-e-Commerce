@@ -5,7 +5,7 @@ import "./App.css";
 import Home from "./components/home/Home";
 import ProductDetails from "./components/ProductsList/details/ProductDetails";
 import Navbar from "./components/home/navbar/Navbar";
-import Cart from "./components/cart/Cart";
+import Cart from "./pages/cart/Cart";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home categoryName={categoryName} />} />
         <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </div>
   );

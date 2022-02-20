@@ -12,15 +12,21 @@ import "./productDetails.css";
 //see product sizes,color,price and else...
 const ProductDetails = () => {
   const { id } = useParams();
-  const [selectedSize, setSelectedSize] = useState("none")
   const [choosenPhoto, setChoosenPhoto] = useState(0);
   const { choosenCurrency } = useContext(currencyContext);
+  const [productAttribute, setProductAttributes] = useState({});
+
+  const cartList = (attribute,value) => {
+    setProductAttributes((att) => ({
+      ...att,
+      [attribute]: value,
+    }));
+  };
 
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
-    console.log(product);
-    dispatch(addCart(product));
+    dispatch(addCart({ ...product, choosenAttribute:productAttribute}));
   };
 
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
@@ -64,15 +70,16 @@ const ProductDetails = () => {
                     if (attribute.name === "Color") {
                       return (
                         <div
+                          onClick={() => cartList(attribute.name, item.value)}
                           className="scand"
                           key={item.id}
                           style={{ backgroundColor: item.value }}
                         />
                       );
                     }
-
                     return (
                       <div
+                        onClick={() => cartList(attribute.name, item.value)}
                         key={item.id}
                         className="products_sizes_container_item"
                       >

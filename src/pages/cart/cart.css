@@ -1,0 +1,250 @@
+.cart_container{
+    max-width: 100px;
+    margin-top: -100px;
+}
+
+.hr{
+    position: relative;
+    top: 80px;
+    left: 80px;
+    width: 1200px;
+}
+
+
+.cart{
+    width: 84px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #1D1F22;
+}
+
+.cart_count{
+    position: relative;
+    left: 600px;
+    top: 0px;
+    font-size: 25px;
+}
+
+.products_cart_sizes_container_item{
+    width: 100px;
+    height: 50%;
+    justify-content: center;
+    display: flex;
+    border: 1px solid #1D1F22;
+    color:  #A6A6A6;
+    margin-left: 10px;
+    margin-top: -30px;
+}
+
+.cart_names{
+    position: relative;
+    font-family: Roboto Condensed;
+    font-size: 20px;
+    line-height: 18px;
+    top: -15px;
+}
+
+.cart_scand{
+    height: 100px;
+    width: 100px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+
+.products_cart_container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 300px;
+    height: 55px;
+    cursor: pointer;
+    top: 80px;
+}
+
+.name_cart{
+    width: 292px;
+    height: 27px;
+    margin-left: 90px;
+    margin-top: -250px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+    color: #1D1F22;
+    margin-bottom: 10px;
+}
+
+.cart_title{
+    width: 292px;
+    height: 27px;
+    margin-left: 90px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 27px;
+    color: #1D1F22;
+}
+
+.cart_prices{
+    width: 86px;
+    height: 46px;
+    margin-left: 90px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 18px;
+    display: flex;
+    color: #1D1F22;
+}
+
+.cart_grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 100px;
+    
+}
+
+
+.boxes{
+    margin-top: -300px;
+    margin-left: -10px;
+}
+
+
+.icrement{
+   position: relative;
+   top: 100px;
+   margin-left: 650px;
+   border: 1px solid #1D1F22;
+   box-sizing: border-box;
+   width: 50px;
+   display: flex;
+   justify-content: center;
+   height: 45px;
+   margin-top: 30px;
+   border-radius: 50%;
+}
+
+.icrement:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+.decrement{
+   position: relative;
+   margin-left: 650px;
+   margin-top: 80px;
+   top: 40px;
+   border: 1px solid #1D1F22;
+   box-sizing: border-box;
+   width: 50px;
+   display: flex;
+   justify-content: center;
+   height: 45px;
+   border-radius: 50%;
+}
+
+div.decrement:hover{
+    cursor: pointer;
+    background-color:darksalmon;
+} 
+
+.cart_all_id{
+  width: 100px;
+}
+
+
+.delete{
+    position: absolute;
+    left: 1200px;
+    margin-top: 90px;
+}
+
+.cart_image{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin-left: 900px;
+    margin-top: 100px;
+}
+
+.cart_id{
+    position: relative;
+    left: 100px;
+    top: 200px;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+@media (max-width:1300px){
+    .cart{
+        position: relative;
+        left: -50px;
+        overflow: hidden;
+    }
+    .cart_container{
+        max-width: 100px;
+    }
+     .delete{
+         position: relative;
+         left: 0px;
+         top: 10px;
+     }
+     .name_cart{
+         position: relative;
+         left: -90px;
+         top: -200px;
+     }
+     .cart_title{
+         position: relative;
+         left: -90px;
+         top: -220px;
+     }
+     .cart_image{
+         position: relative;
+         left: -700px;
+         top: -200px;
+     }
+     .cart_id{
+         left: 10px;
+         top: 70px;
+     }
+     .cart_prices{
+         position: relative;
+         left: -90px;
+         top: -180px;
+     }
+     .icrement{
+         position: relative;
+         left: -650px;
+         top:  -10px;
+     }
+     .decrement{
+         position: relative;
+         left: -560px;
+         top: -140px;
+     }
+     .hr{
+         position: relative;
+         max-width: 460px;
+         left: -0px;
+         top: 20px;
+     }
+     .products_cart_container{
+         position: relative;
+         top: 170px;
+     }
+
+}
