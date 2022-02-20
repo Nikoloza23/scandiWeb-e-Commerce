@@ -3,7 +3,9 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { delCart } from "../../redux/action/index";
 import "./cart.css";
-import { currencyContext } from "../../components/context/currencyContext";
+import { currencyContext } from "../context/currencyContext";
+import {increment, decrement} from '../../redux/action/index'
+ 
 
 
 //map list of items that you want to buy
@@ -16,8 +18,6 @@ const Cart = () => {
     const handleClose = (item) => {
       dispatch(delCart(item));
     };
-
-    console.log(product);
 
     return (
       <div className="cart_container" key={product.id}>
@@ -33,22 +33,46 @@ const Cart = () => {
           {`${product.prices[(index, choosenCurrency)].currency.symbol}`}
           {`${product.prices[(index, choosenCurrency)].amount}`}
         </p>
+
         <div className="boxes">
           <div className="cart_id">
             {product.choosenAttribute.Size && (
-              <div>Size:{product.choosenAttribute.Size}</div>
+              <div className="cart_size">
+                Size:{product.choosenAttribute.Size}
+              </div>
             )}
-             {product.choosenAttribute.Color && (
-               <div
-               className="cart_scand"
-               style={{ backgroundColor: product.choosenAttribute.Color }}
-             />
+            {product.choosenAttribute.Color && (
+              <div className="cart_scand">
+                Color:
+                <div
+                  className="products_cart_container"
+                  style={{ backgroundColor: product.choosenAttribute.Color }}
+                />
+              </div>
+            )}
+
+            {product.choosenAttribute.Capacity && (
+              <div className="cart_name_capacity">
+                Capacity:
+                <div className="cart_capacity">
+                  {product.choosenAttribute.Capacity}
+                </div>
+              </div>
+            )}
+            {product.choosenAttribute["With USB 3 ports"] && (
+              <div className="">
+                Capacity:{product.choosenAttribute["With USB 3 ports"]}
+              </div>
             )}
           </div>
         </div>
         <div className="icrement">+</div>
         <div className="decrement">-</div>
         <hr className="hr" />
+          <ul className="price">
+            <li className="grey">Total:</li>
+            <li className="total_amount">40$</li>
+          </ul>
       </div>
     );
   };

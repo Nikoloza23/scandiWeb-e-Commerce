@@ -5,7 +5,7 @@ import "./App.css";
 import Home from "./components/home/Home";
 import ProductDetails from "./components/ProductsList/details/ProductDetails";
 import Navbar from "./components/home/navbar/Navbar";
-import Cart from "./pages/cart/Cart";
+import Cart from "./components/cart/Cart";
 
 
 function App() {

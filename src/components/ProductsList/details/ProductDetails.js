@@ -16,6 +16,7 @@ const ProductDetails = () => {
   const { choosenCurrency } = useContext(currencyContext);
   const [productAttribute, setProductAttributes] = useState({});
 
+  console.log(productAttribute)
   const cartList = (attribute,value) => {
     setProductAttributes((att) => ({
       ...att,
@@ -37,6 +38,7 @@ const ProductDetails = () => {
 
   if (error) return <div>Error...</div>;
 
+  console.log(data)
   return (
     <>
       <div className="product_img_container">

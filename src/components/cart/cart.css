@@ -1,15 +1,43 @@
 .cart_container{
-    max-width: 100px;
+    max-width: 110px;
     margin-top: -100px;
 }
 
 .hr{
+    margin-bottom: 100px;
     position: relative;
-    top: 80px;
+    top: 130px;
     left: 80px;
     width: 1200px;
 }
+ 
+  .grey:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
 
+
+  .price li {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    left: 40px;
+    top: 100px;
+  }
+  
+  .price .grey {
+    background-color: #eee;
+    font-size: 20px;
+  }
+  
+ 
+  
+  @media only screen and (max-width: 600px) {
+    .columns {
+      width: 100%;
+    }
+  }
 
 .cart{
     width: 84px;
@@ -25,23 +53,7 @@
     color: #1D1F22;
 }
 
-.cart_count{
-    position: relative;
-    left: 600px;
-    top: 0px;
-    font-size: 25px;
-}
 
-.products_cart_sizes_container_item{
-    width: 100px;
-    height: 50%;
-    justify-content: center;
-    display: flex;
-    border: 1px solid #1D1F22;
-    color:  #A6A6A6;
-    margin-left: 10px;
-    margin-top: -30px;
-}
 
 .cart_names{
     position: relative;
@@ -52,22 +64,48 @@
 }
 
 .cart_scand{
-    height: 100px;
-    width: 100px;
-    margin-left: 5px;
+    position: relative;
+    height: 35px;
+    width: 35%;
+    margin-left: 100px;
     margin-bottom: 10px;
+    box-sizing: border-box;
+    top: 290px;
+    left: 0px;
+    font-size: 20px;
 }
 
+.cart_capacity{
+    position: relative;
+    left: 85px;
+    top: -18px;
+    font-size: 18px;
+}
+
+.cart_name_capacity{
+    
+    position: relative;
+    left: 100px;
+    top: 280px;
+}
+
+.cart_size{
+    position: relative;
+    top: 280px;
+    left: 100px;
+    font-size: 20px;
+}
 
 .products_cart_container{
     position: relative;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    width: 300px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    top: 80px;
+    top: -30px;
+    left: 60px;
 }
 
 .name_cart{
@@ -161,9 +199,6 @@ div.decrement:hover{
     background-color:darksalmon;
 } 
 
-.cart_all_id{
-  width: 100px;
-}
 
 
 .delete{
@@ -178,15 +213,10 @@ div.decrement:hover{
     height: 250px;
     margin-left: 900px;
     margin-top: 100px;
+    margin-bottom: 50px;
+    top: -10px;
 }
 
-.cart_id{
-    position: relative;
-    left: 100px;
-    top: 200px;
-    font-size: 24px;
-    font-weight: 100;
-}
 
 @media (max-width:1300px){
     .cart{
@@ -247,4 +277,4 @@ div.decrement:hover{
          top: 170px;
      }
 
-}
+} 
