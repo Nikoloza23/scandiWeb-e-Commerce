@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./productItem.css";
 import { currencyContext } from "../../context/currencyContext";
 
-//Take data from Graphql
+//Take data from GraphQL
 const ProductItem = ({ data }) => {
   const { id, gallery, name, prices } = data;
 

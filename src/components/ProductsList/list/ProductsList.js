@@ -8,7 +8,7 @@ const ProductsList = ({ data }) => {
     <ul>
       {data.map((item) => {
         return (
-          <li key={item.id} style={{ listStyle: "none"}}>
+          <li key={item.id} style={{ listStyle: "none" }}>
             <ProductItem data={item} />
           </li>
         );
@@ -18,4 +18,3 @@ const ProductsList = ({ data }) => {
 };
 
 export default ProductsList;
-

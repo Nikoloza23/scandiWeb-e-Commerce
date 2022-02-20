@@ -1,12 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { delCart } from "../../redux/action/index";
 import "./cart.css";
 import { currencyContext } from "../context/currencyContext";
-import {increment, decrement} from '../../redux/action/index'
- 
-
 
 //map list of items that you want to buy
 const Cart = () => {
@@ -33,7 +30,6 @@ const Cart = () => {
           {`${product.prices[(index, choosenCurrency)].currency.symbol}`}
           {`${product.prices[(index, choosenCurrency)].amount}`}
         </p>
-
         <div className="boxes">
           <div className="cart_id">
             {product.choosenAttribute.Size && (
@@ -60,23 +56,25 @@ const Cart = () => {
               </div>
             )}
             {product.choosenAttribute["With USB 3 ports"] && (
-              <div className="">
-                Capacity:{product.choosenAttribute["With USB 3 ports"]}
+              <div className="with_usb_3">
+                With USB 3 ports:{product.choosenAttribute["With USB 3 ports"]}
+              </div>
+            )}
+            {product.choosenAttribute["Touch ID in keyboard"] && (
+              <div className="touch_id_cart">
+                Touch ID in keyboard:
+                {product.choosenAttribute["Touch ID in keyboard"]}
               </div>
             )}
           </div>
         </div>
-        <div className="icrement">+</div>
-        <div className="decrement">-</div>
+        <div className="icrement"></div>
+        <div className="decrement"></div>
         <hr className="hr" />
-          <ul className="price">
-            <li className="grey">Total:</li>
-            <li className="total_amount">40$</li>
-          </ul>
       </div>
     );
   };
-
+  
   return (
     <div className="cart_grid">
       <h1 className="cart">CART</h1>
@@ -84,6 +82,10 @@ const Cart = () => {
         state.map((item, i) => {
           return <Product product={item} index={i} key={item.id} />;
         })}
+        {state.length === 0 &&(
+          <h1 className="empty_cart">Cart is Empty!</h1>
+        )}
+        
     </div>
   );
 };

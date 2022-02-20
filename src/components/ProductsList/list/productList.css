@@ -3,7 +3,3 @@ ul{
     flex-wrap: wrap;
 }
 
-::marker {
-    list-style: none;
-    color: white;
-}

@@ -12,17 +12,3 @@ export const delCart = (product) => {
     payload: product,
   };
 };
-
-export const incriment = () => {
-  return {
-    type: "INCRIMENT",
-    payload: id,
-  };
-};
-
-export const decriment = () => {
-  return {
-    type: "DECRIMENT",
-    payload: id,
-  };
-};

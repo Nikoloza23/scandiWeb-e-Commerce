@@ -12,6 +12,7 @@ const Navbar = ({ setCategoryName }) => {
   const { data, setChoosenCurrency } = useContext(currencyContext);
 
   const state = useSelector((state) => state.handleCart);
+  
 
   const onSelectClick = (event) => {
     const selectedCurrency = event.target.value;

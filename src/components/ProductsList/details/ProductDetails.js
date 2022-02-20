@@ -6,8 +6,8 @@ import { currencyContext } from "../../context/currencyContext";
 import React, { useContext } from "react";
 import { addCart } from "../../../redux/action/index";
 import { useDispatch } from "react-redux";
-
 import "./productDetails.css";
+
 //make ProductDetails after click on Products
 //see product sizes,color,price and else...
 const ProductDetails = () => {
@@ -16,8 +16,7 @@ const ProductDetails = () => {
   const { choosenCurrency } = useContext(currencyContext);
   const [productAttribute, setProductAttributes] = useState({});
 
-  console.log(productAttribute)
-  const cartList = (attribute,value) => {
+  const cartList = (attribute, value) => {
     setProductAttributes((att) => ({
       ...att,
       [attribute]: value,
@@ -27,7 +26,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
-    dispatch(addCart({ ...product, choosenAttribute:productAttribute}));
+    dispatch(addCart({ ...product, choosenAttribute: productAttribute }));
   };
 
   const { data, loading, error } = useQuery(GET_PRODUCT_DETAILS_QUERY, {
@@ -38,7 +37,6 @@ const ProductDetails = () => {
 
   if (error) return <div>Error...</div>;
 
-  console.log(data)
   return (
     <>
       <div className="product_img_container">
@@ -73,12 +71,29 @@ const ProductDetails = () => {
                       return (
                         <div
                           onClick={() => cartList(attribute.name, item.value)}
-                          className="scand"
+                          className={
+                            productAttribute.Color === item.value
+                              ? "active_scand scand"
+                              : "scand"
+                          }
                           key={item.id}
                           style={{ backgroundColor: item.value }}
                         />
                       );
                     }
+
+                    if (productAttribute[attribute.name] === item.value) {
+                      return (
+                        <div
+                          onClick={() => cartList(attribute.name, item.value)}
+                          key={item.id}
+                          className="products_sizes_container_item active_sizes_container"
+                        >
+                          <div>{item.value}</div>
+                        </div>
+                      );
+                    }
+
                     return (
                       <div
                         onClick={() => cartList(attribute.name, item.value)}

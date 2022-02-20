@@ -26,7 +26,7 @@ const PTODUCT_CATEGORY_QUERY = gql`
   }
 `;
 
-//make filtration to products
+//make filtration to products:ALL,CLOTHES,TECH
 const Home = ({ categoryName }) => {
   const { data, loading, error } = useQuery(PTODUCT_CATEGORY_QUERY, {
     variables: { title: categoryName },
